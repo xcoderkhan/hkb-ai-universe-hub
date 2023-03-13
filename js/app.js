@@ -17,7 +17,7 @@ const displayAIData = aidatas => {
                 <div class="card-body">
                     <h5 class="card-title">Features</h5>
                 </div>
-                <div class=>
+                <div class="custom-padding">
                 <p class="line"></p>
                 <h5 class="card-title">${aidata.name}</h5>
                 </div>
