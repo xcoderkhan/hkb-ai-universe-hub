@@ -17,6 +17,10 @@ const displayAIData = aidatas => {
                 <div class="card-body">
                     <h5 class="card-title">Features</h5>
                 </div>
+                <div class=>
+                <p class="line"></p>
+                <h5 class="card-title">${aidata.name}</h5>
+                </div>
         </div>`;
 
         // create ol array in the inner HTML
