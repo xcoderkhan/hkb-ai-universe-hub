@@ -6,9 +6,21 @@
     background: cornflowerblue;
 }
 
+.btn-icon{
+    border-radius: 50%;
+    background-color: #fef7f7;
+}
+
+.btn-icon:hover{
+    background-color: aquamarine;
+}
+
+i{
+    color: #eb5757;
+}
+
 .custom-padding {
-    margin-left: 16px !important;
-    margin-bottom: 5px;
+    margin: 0 16px 5px 16px;
 }
 
 .line {

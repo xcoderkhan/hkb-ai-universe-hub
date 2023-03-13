@@ -18,12 +18,21 @@ const displayAIData = aidatas => {
                     <h5 class="card-title">Features</h5>
                 </div>
                 <div class="custom-padding">
-                <p class="line"></p>
-                <h5 class="card-title">${aidata.name}</h5>
+                    <p class="line"></p>
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h5 class="card-title">${aidata.name}</h5>
+                                <p class="card-text">${aidata.published_in}</p>
+                            </div>
+                            <div>
+                                <button class="btn btn-icon"><i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
                 </div>
         </div>`;
 
         // create ol array in the inner HTML
+        
 
         const ol = document.createElement('ol');
         ol.classList.add('list-group', 'list-group-flush');
