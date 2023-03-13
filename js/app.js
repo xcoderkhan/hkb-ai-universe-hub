@@ -6,20 +6,35 @@ const loadAIData = async () => {
 }
 
 const displayAIData = aidatas => {
+    console.log(aidatas);
     const aiContainer = document.getElementById('ai-container');
     aidatas.forEach(aidata => {
         const dataDiv = document.createElement('div');
         dataDiv.classList.add('col');
         dataDiv.innerHTML = `
         <div class="card">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="${aidata.image}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in
-                        to additional
-                        content. This content is a little bit longer.</p>
+                    <h5 class="card-title">Features</h5>
                 </div>
         </div>`;
+
+        // create ol array in the inner HTML
+
+        const ol = document.createElement('ol');
+        ol.classList.add('list-group', 'list-group-flush');
+        for (let i = 0; i < aidata.features.length; i++) {
+            const li = document.createElement('li');
+            li.classList.add('custom-padding');
+            li.innerText = aidata.features[i];
+            ol.appendChild(li);
+        }
+
+        const cardBodies = dataDiv.getElementsByClassName('card-body');
+        for (let i = 0; i < cardBodies.length; i++) {
+            cardBodies[i].appendChild(ol);
+        }
+
         aiContainer.appendChild(dataDiv);
 
     });

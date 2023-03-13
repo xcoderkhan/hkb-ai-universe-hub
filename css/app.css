@@ -1,6 +1,11 @@
-.btn-c-color{
+.btn-c-color {
     background: #eb5757;
 }
-.btn-c-color:hover{
+
+.btn-c-color:hover {
     background: cornflowerblue;
+}
+
+.custom-padding {
+    margin-left: 16px !important;
 }
