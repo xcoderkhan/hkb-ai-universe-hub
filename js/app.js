@@ -12,8 +12,8 @@ const displayAIData = aidatas => {
         const dataDiv = document.createElement('div');
         dataDiv.classList.add('col');
         dataDiv.innerHTML = `
-        <div class="card">
-            <img src="${aidata.image}" class="card-img-top" alt="...">
+        <div class="card rounded-3">
+                <img src="${aidata.image}" class="card-img-top p-3 rounded-5" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Features</h5>
                 </div>
@@ -38,7 +38,7 @@ const displayAIData = aidatas => {
         ol.classList.add('list-group', 'list-group-flush');
         for (let i = 0; i < aidata.features.length; i++) {
             const li = document.createElement('li');
-            li.classList.add('custom-padding');
+            li.classList.add('text-secondary', 'custom-padding');
             li.innerText = aidata.features[i];
             ol.appendChild(li);
         }
