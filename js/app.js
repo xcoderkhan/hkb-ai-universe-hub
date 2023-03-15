@@ -55,12 +55,14 @@ const displayAIData = aidatas => {
 
 loadAIData();
 
+// code for data sort 
+
 const dateSort = document.getElementById('btn-date-sort');
 dateSort.addEventListener("click", function () {
     const aiContainer = document.getElementById('ai-container');
     const dataDivs = aiContainer.getElementsByClassName('col');
     const sortedDivs = [...dataDivs].sort((a, b) => new Date(a.querySelector('.card-text').textContent) - new Date(b.querySelector('.card-text').textContent));
     for (let i = 0; i < sortedDivs.length; i++) {
-        aiContainer.appendChild(sortedDivs[i]);
+        aiContainer.appendChild(sortedDivs[i]); // New child add after sort
     }
 });
