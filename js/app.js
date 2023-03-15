@@ -8,11 +8,12 @@ const loadAIData = async () => {
 const displayAIData = aidatas => {
     console.log(aidatas);
     const aiContainer = document.getElementById('ai-container');
+    aidatas = aidatas.slice(0, 6);
     aidatas.forEach(aidata => {
         const dataDiv = document.createElement('div');
         dataDiv.classList.add('col');
         dataDiv.innerHTML = `
-        <div class="card rounded-3">
+        <div class="card rounded-3 h-100">
                 <img src="${aidata.image}" class="card-img-top p-3 rounded-5" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Features</h5>
@@ -32,7 +33,7 @@ const displayAIData = aidatas => {
         </div>`;
 
         // create ol array in the inner HTML
-        
+
 
         const ol = document.createElement('ol');
         ol.classList.add('list-group', 'list-group-flush');
