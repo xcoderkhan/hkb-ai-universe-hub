@@ -6,8 +6,8 @@ const loadAIData = async () => {
 }
 
 const displayAIData = aidatas => {
-    console.log(aidatas);
     const aiContainer = document.getElementById('ai-container');
+    aiContainer.innerHTML = ""; // clear previous content
     aidatas = aidatas.slice(0, 6);
     aidatas.forEach(aidata => {
         const dataDiv = document.createElement('div');
@@ -34,7 +34,6 @@ const displayAIData = aidatas => {
 
         // create ol array in the inner HTML
 
-
         const ol = document.createElement('ol');
         ol.classList.add('list-group', 'list-group-flush');
         for (let i = 0; i < aidata.features.length; i++) {
@@ -55,3 +54,13 @@ const displayAIData = aidatas => {
 }
 
 loadAIData();
+
+const dateSort = document.getElementById('btn-date-sort');
+dateSort.addEventListener("click", function () {
+    const aiContainer = document.getElementById('ai-container');
+    const dataDivs = aiContainer.getElementsByClassName('col');
+    const sortedDivs = [...dataDivs].sort((a, b) => new Date(a.querySelector('.card-text').textContent) - new Date(b.querySelector('.card-text').textContent));
+    for (let i = 0; i < sortedDivs.length; i++) {
+        aiContainer.appendChild(sortedDivs[i]);
+    }
+});
