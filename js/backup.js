@@ -8,7 +8,17 @@ const loadAIData = async () => {
 const displayAIData = aidatas => {
     const aiContainer = document.getElementById('ai-container');
     aiContainer.innerHTML = ""; // clear previous content
-    aidatas = aidatas.slice(0, 6);
+
+    const showData = document.getElementById('show-data');
+    if (aidatas.length > 6) {
+        aidatas = aidatas.slice(0, 6);
+
+    }
+
+    else {
+        aidatas = aidatas.slice();
+    }
+
     aidatas.forEach(aidata => {
         const dataDiv = document.createElement('div');
         dataDiv.classList.add('col');

@@ -6,16 +6,16 @@
     background: cornflowerblue;
 }
 
-.btn-icon{
+.btn-icon {
     border-radius: 50%;
     background-color: #fef7f7;
 }
 
-.btn-icon:hover{
+.btn-icon:hover {
     background-color: aquamarine;
 }
 
-i{
+i {
     color: #eb5757;
 }
 
