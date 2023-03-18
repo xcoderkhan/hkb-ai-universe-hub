@@ -7,12 +7,12 @@ const loadAIData = async () => {
 
 const displayAIData = aidatas => {
     const aiContainer = document.getElementById('ai-container');
-    aiContainer.innerHTML = ""; // clear previous content
-
+    
     let limit = 6; // set initial limit to 6
     let showDataButton = document.getElementById('show-data');
 
     const showAIData = () => {
+        aiContainer.innerHTML = "";  // clear previous content
         let end = Math.min(aidatas.length, limit);
         for (let i = 0; i < end; i++) {
             let aidata = aidatas[i];
@@ -81,6 +81,7 @@ dateSort.addEventListener("click", function () {
     const aiContainer = document.getElementById('ai-container');
     const dataDivs = aiContainer.getElementsByClassName('col');
     const sortedDivs = [...dataDivs].sort((a, b) => new Date(a.querySelector('.card-text').textContent) - new Date(b.querySelector('.card-text').textContent));
+    aiContainer.innerHTML = "";
     for (let i = 0; i < sortedDivs.length; i++) {
         aiContainer.appendChild(sortedDivs[i]); // New child add after sort
     }
