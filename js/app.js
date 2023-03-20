@@ -6,8 +6,9 @@ const loadAIData = async () => {
 }
 
 const displayAIData = aidatas => {
+    // console.log(aidatas);
     const aiContainer = document.getElementById('ai-container');
-    
+
     let limit = 6; // set initial limit to 6
     let showDataButton = document.getElementById('show-data');
 
@@ -32,7 +33,7 @@ const displayAIData = aidatas => {
                                     <p class="card-text">${aidata.published_in}</p>
                                 </div>
                                 <div>
-                                    <button class="btn btn-icon"><i class="fa-solid fa-arrow-right"></i></button>
+                                    <button onclick="loadAIData('${aidata}')" class="btn btn-icon" data-bs-toggle="modal" data-bs-target="#showAIDetails"><i class="fa-solid fa-arrow-right"></i></button>
                                 </div>
                             </div>
                     </div>
